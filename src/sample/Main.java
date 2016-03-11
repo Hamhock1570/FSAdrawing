@@ -20,8 +20,10 @@ public class Main extends Application{
     public void start(Stage primaryStage) throws Exception
     {
         File fsaResourceFile = chooseFile(primaryStage); // get the file to read the FSA from
-
-        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
+        FSAloader loader = new FSAloader(fsaResourceFile);// loads the FSA
+        FSAviewer view = new FSAviewer(loader.getFSA());
+        //view.draw();// or something, may need another layer of processing
+        Parent root = FXMLLoader.load(getClass().getResource("FSAdrawer.fxml"));
         primaryStage.setTitle("FSA Drawing Program");
         primaryStage.setScene(new Scene(root, 400, 320));
         primaryStage.show();

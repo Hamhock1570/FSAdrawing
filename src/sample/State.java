@@ -2,7 +2,7 @@ package sample;
 
 import java.util.LinkedList;
 
-/**
+/**Represents a state and activities of a state
  * Created by Michael
  */
 public class State {
@@ -10,39 +10,39 @@ public class State {
     private LinkedList<Transition> transitions;
 
     /**Constructor for a State
-     * intitilizes a linked list of transitions to null
+     * initializes a linked list of transitions to null
      */
-    public State(){
-        this.stateName  = null;
+    public State(String stateName){
+        this.stateName  = stateName;
          this.transitions = null;
     }
 
     /**
-     *
-     * @param stateName
+     * Setter method for the state name
+     * @param stateName the name of the state
      */
     public void setStateName(String stateName){
         this.stateName = stateName;
     }
 
-    /**
-     *
+    /** Accessor method for the state's name
+     *  @return the name of the state
      */
     public String getStateName(){
         return this.stateName;
     }
 
     /**
-     *
-     * @param t
+     * Adds a transition into the state's list of transitions
+     * @param t the transition object to add into the list
      */
     public void addTransition(Transition t){
         this.transitions.add(t);
     }
 
     /**
-     *
-     * @return
+     *accessor method for a state's list of transitions
+     * @return the linked list of transitions
      */
     public LinkedList<Transition> getTransitions(){
         return this.transitions;

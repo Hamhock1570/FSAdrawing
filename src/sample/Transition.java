@@ -1,12 +1,13 @@
 package sample;
 
-/**
+/** Represents a transition
  * Created by Michael
  */
 public class Transition {
     private State state1;// the state you're in
     private State state2; // the state that you're transitioning to
 
+    // might need to change this to state names (what if the states don't exist yet)
     public Transition(State state1, State state2){
         this.state1 = state1;
         this.state2 = state2;
